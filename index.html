@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+    <link rel="stylesheet" href="index.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="modal" id="main-modal">
+      <div class="modal-overlay flex items-center">
+        <div class="modal-container flex flex-col items-center w-full">
+          <h1 class="font-bold text-lg my-2">Page 1</h1>
+          <a href="#" class="absolute right-7 top-px text-xl">x</a>
+
+          <div class="modal-body w-96">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic iure
+            nemo molestias dolores maxime quae dolor dolorem, eius eum obcaecati
+            consectetur quod sit quia vitae repellendus tempore illo aut velit?
+          </div>
+
+          <div class="mt-4">
+            <button
+              onclick="changeRoute('#')"
+              class="bg-gray-700 hover:bg-gray-900 text-white p-3 py-2 rounded"
+            >
+              Cancel
+            </button>
+            <button
+              class="bg-blue-700 hover:bg-blue-900 text-white p-3 py-2 rounded"
+              onclick="changeRoute('#continue-modal')"
+            >
+              Continue
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="continue-modal">
+      <div class="modal-overlay flex items-center">
+        <div class="modal-container flex flex-col items-center w-full">
+          <h1 class="font-bold text-lg my-2">Page 2</h1>
+          <a href="#" class="absolute right-7 top-px text-xl">x</a>
+
+          <div class="modal-body w-96">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic iure
+            nemo molestias dolores maxime quae dolor dolorem, eius eum obcaecati
+            consectetur quod sit quia vitae repellendus tempore illo aut velit?
+          </div>
+
+          <div class="mt-4">
+            <button
+              onclick="changeRoute('#main-modal')"
+              class="bg-gray-700 hover:bg-gray-900 text-white p-3 py-2 rounded"
+            >
+              Cancel
+            </button>
+            <button
+              class="bg-blue-700 hover:bg-blue-900 text-white p-3 py-2 rounded"
+            >
+              Continue
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a
+      href="#main-modal"
+      class="bg-blue-600 hover:bg-blue-700 text-white p-3 py-2 m-2 inline-block rounded"
+      >Open Modal</a
+    >
+
+    <script>
+      function changeRoute(route) {
+        location.hash = route;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+.modal {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.modal:target {
+  visibility: visible;
+  transition: opacity 0.4s;
+  opacity: 1;
+}
+
+.modal-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: gray;
+}
